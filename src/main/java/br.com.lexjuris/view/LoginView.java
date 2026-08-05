@@ -70,7 +70,7 @@ public class LoginView {
                 return;
             }
 
-            System.out.println("Dados preenchidos!");
+            controller.fazerLogin(emailDigitado, senhaDigitada);
         });
 
 
