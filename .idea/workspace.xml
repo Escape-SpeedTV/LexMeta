@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b93caff0-dc29-4911-8e35-cbe86cea5502" name="Changes" comment="" />
+    <list default="true" id="b93caff0-dc29-4911-8e35-cbe86cea5502" name="Changes" comment="Foi adicionado algumas imagens do designer. iniciado o código do menu de login.">
+      <changelist_data name="William Nakano" email="" automatic="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,6 +27,16 @@
         </map>
       </branch-storage>
     </excluded-from-favorite>
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="William Nakano" />
+      </list>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -41,7 +54,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "origin",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.jshint": "true",
     "node.js.selected.package.jshint": "",
@@ -77,6 +90,21 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Foi adicionado algumas imagens do designer. iniciado o código do menu de login." />
+    <option name="LAST_COMMIT_MESSAGE" value="Foi adicionado algumas imagens do designer. iniciado o código do menu de login." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
