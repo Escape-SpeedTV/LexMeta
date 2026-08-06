@@ -10,7 +10,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) {
 
-        LoginView loginView = new LoginView();
+        LoginView loginView = new LoginView(stage);
 
         Scene scene = new Scene(
                 loginView.getView(),
@@ -27,3 +27,5 @@ public class Main extends Application {
         launch();
     }
 }
+
+//.\mvnw.cmd clean javafx:run

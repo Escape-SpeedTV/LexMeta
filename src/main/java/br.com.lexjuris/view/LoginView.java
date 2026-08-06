@@ -9,6 +9,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.control.Alert;
+import javafx.stage.Stage;
+import javafx.scene.Scene;
+import javafx.scene.layout.HBox;
+import javafx.geometry.Pos;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.Priority;
 
 import br.com.lexjuris.controller.loginController;
 
@@ -19,11 +26,35 @@ public class LoginView {
     private final PasswordField senha;
     private final loginController controller;
 
-    public LoginView() {
+    public LoginView(Stage stage) {
 
 
         controller = new loginController();
         root = new StackPane();
+
+        HBox tela = new HBox();
+        tela.getStyleClass().add("login-screen");
+
+        StackPane painelEsquerdo = new StackPane();
+        painelEsquerdo.getStyleClass().add("login-left");
+
+        StackPane painelDireito = new StackPane();
+        painelDireito.getStyleClass().add("login-right");
+
+        HBox.setHgrow(painelEsquerdo, Priority.ALWAYS);
+        HBox.setHgrow(painelDireito, Priority.ALWAYS);
+
+        painelEsquerdo.setPrefWidth(47);
+        painelDireito.setPrefWidth(53);
+
+        tela.getChildren().addAll(
+                painelEsquerdo, painelDireito
+        );
+
+        root.getChildren().add(tela);
+
+        painelDireito.setAlignment(Pos.CENTER);
+
 
 
         var css = getClass().getResource("/css/login.css");
@@ -33,18 +64,38 @@ public class LoginView {
         }
 
 
-        Label titulo = new Label("LexMeta");
+        Label titulo = new Label("Bem-Vindo de Volta!");
         titulo.getStyleClass().add("login-title");
 
+        Label subtitulo = new Label("Faça login para acessar sua conta");
+        subtitulo.getStyleClass().add("login-subtitle");
+
+        Label emailLabel = new Label("E-mail");
+        emailLabel.getStyleClass().add("input-label");
 
         email = new TextField();
         email.setPromptText("E-mail");
         email.getStyleClass().add("login-input");
 
 
+        Label senhaLabel = new Label("Senha");
+        senhaLabel.getStyleClass().add("input-label");
+
         senha = new PasswordField();
         senha.setPromptText("Senha");
         senha.getStyleClass().add("login-input");
+
+        VBox emailBox = new VBox(7);
+        emailBox.getChildren().addAll(
+                emailLabel,
+                email
+        );
+
+        VBox senhaBox = new VBox(7);
+        senhaBox.getChildren().addAll(
+                senhaLabel,
+                senha
+        );
 
 
         CheckBox lembrar = new CheckBox("Lembrar de mim");
@@ -70,7 +121,23 @@ public class LoginView {
                 return;
             }
 
-            controller.fazerLogin(emailDigitado, senhaDigitada);
+            boolean loginValido = controller.fazerLogin(emailDigitado, senhaDigitada);
+
+            if(loginValido) {
+                dashboardview dbView = new dashboardview();
+
+                Scene dashboardScene = new Scene(
+                        dbView.getRoot(), 800, 600
+                );
+                stage.setScene(dashboardScene);
+            }else{
+                Alert alerta = new Alert(Alert.AlertType.ERROR);
+                alerta.setTitle("login");
+                alerta.setHeaderText(null);
+                alerta.setContentText("E-mail ou senha incorretos.");
+
+                alerta.showAndWait();
+            }
         });
 
 
@@ -85,14 +152,26 @@ public class LoginView {
 
         formulario.getChildren().addAll(
                 titulo,
-                email,
-                senha,
+                subtitulo,
+                emailBox,
+                senhaBox,
                 lembrar,
                 entrar,
                 esqueceuSenha
         );
 
-        root.getChildren().add(formulario);
+        painelDireito.getChildren().add(formulario);
+
+        Image imagem = new Image(
+                getClass().getResource("/imagens/juris.png").toExternalForm()
+        );
+
+//        ImageView imagemView = new ImageView(imagem);
+//        imagemView.fitWidthProperty().bind(painelEsquerdo.widthProperty());
+//        imagemView.fitHeightProperty().bind(painelEsquerdo.heightProperty());
+//        imagemView.setPreserveRatio(false);
+
+//        painelEsquerdo.getChildren().add(imagemView);
     }
 
     public StackPane getView() {
