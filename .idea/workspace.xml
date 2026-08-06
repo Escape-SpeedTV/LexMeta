@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b93caff0-dc29-4911-8e35-cbe86cea5502" name="Changes" comment="Colocado o controle de senha e usuario" />
+    <list default="true" id="b93caff0-dc29-4911-8e35-cbe86cea5502" name="Changes" comment="Concluido a parte do back-end responsável pelo login e pelo redirecionamento do usuário. Em relação ao front-end, já foi inciado a estilização em CSS e estou finalizando ainda.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br.com.lexjuris/view/dashboardview.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/imagens/juris.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br.com.lexjuris/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br.com.lexjuris/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br.com.lexjuris/controller/loginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br.com.lexjuris/controller/loginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br.com.lexjuris/view/LoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br.com.lexjuris/view/LoginView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/CSS/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/CSS/login.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,6 +57,65 @@
     &quot;accountId&quot;: &quot;2d0f558c-c9c6-4eb3-9e1c-70b9a9e40e98&quot;
   }
 }</component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.4434279389099038" />
+      <entry key="MS500" value="2.3595175758087423" />
+      <entry key="S2" value="2.838053732637735" />
+      <entry key="S5" value="3.4750411117398987" />
+      <entry key="S10" value="4.669549071229947" />
+      <entry key="S30" value="11.607716677522143" />
+      <entry key="S60" value="27.587570758804745" />
+      <entry key="M2" value="49.656704130384476" />
+      <entry key="M5" value="77.6570896115301" />
+      <entry key="M10" value="104.54869527031298" />
+      <entry key="M15" value="127.31014202169644" />
+      <entry key="M30" value="189.30588721556427" />
+      <entry key="H1" value="295.3061626957592" />
+      <entry key="H2" value="423.82021769940343" />
+      <entry key="H4" value="531.8531575709463" />
+      <entry key="D1" value="659.1675456092353" />
+      <entry key="W1" value="685.4696903593026" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="9.544128002718386E-123" />
+      <entry key="S5" value="1.6932629068057539E-49" />
+      <entry key="S10" value="5.121927332187286E-25" />
+      <entry key="S30" value="1.2393063962579404E-8" />
+      <entry key="S60" value="1.6875253267417426E-4" />
+      <entry key="M2" value="0.022315117303994724" />
+      <entry key="M5" value="0.5415287487773051" />
+      <entry key="M10" value="1.8690443182951684" />
+      <entry key="M15" value="3.0833606189223492" />
+      <entry key="M30" value="6.680760888936108" />
+      <entry key="H1" value="13.966328825769416" />
+      <entry key="H2" value="23.674562136262466" />
+      <entry key="H4" value="32.19104040816268" />
+      <entry key="D1" value="42.4779839316326" />
+      <entry key="W1" value="44.62877779483446" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="1.3942594843781888" />
+      <entry key="MS500" value="2.3432191975388115" />
+      <entry key="S2" value="2.833154761205333" />
+      <entry key="S5" value="3.472716297296105" />
+      <entry key="S10" value="4.66802781474879" />
+      <entry key="S30" value="11.60562768019411" />
+      <entry key="S60" value="27.58412391117205" />
+      <entry key="M2" value="49.67478477091995" />
+      <entry key="M5" value="78.18899626528068" />
+      <entry key="M10" value="106.40154126701452" />
+      <entry key="M15" value="130.37499158028615" />
+      <entry key="M30" value="195.96518811357518" />
+      <entry key="H1" value="309.2492010134735" />
+      <entry key="H2" value="447.47482378338657" />
+      <entry key="H4" value="564.0306011693928" />
+      <entry key="D1" value="701.6425391139668" />
+      <entry key="W1" value="730.0980193866351" />
+    </decayedShown>
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -61,22 +128,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "develop",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.jshint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.jshint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.JavaFX",
+    "to.speed.mode.migration.done": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\william.santos\IdeaProjects\LexMetaFX\src\main\resources" />
@@ -118,7 +194,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Foi adicionado algumas imagens do designer. iniciado o código do menu de login." />
     <MESSAGE value="Colocado o controle de senha e usuario" />
-    <option name="LAST_COMMIT_MESSAGE" value="Colocado o controle de senha e usuario" />
+    <MESSAGE value="Concluido a parte do back-end responsável pelo login e pelo redirecionamento do usuário. Em relação ao front-end, já foi inciado a estilização em CSS e estou finalizando ainda." />
+    <option name="LAST_COMMIT_MESSAGE" value="Concluido a parte do back-end responsável pelo login e pelo redirecionamento do usuário. Em relação ao front-end, já foi inciado a estilização em CSS e estou finalizando ainda." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
