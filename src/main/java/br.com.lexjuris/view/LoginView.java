@@ -13,9 +13,8 @@ import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.layout.HBox;
 import javafx.geometry.Pos;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.Priority;
+//import javafx.scene.layout.Region;
 
 import br.com.lexjuris.controller.loginController;
 
@@ -41,6 +40,16 @@ public class LoginView {
         StackPane painelDireito = new StackPane();
         painelDireito.getStyleClass().add("login-right");
 
+//        Region diagonal = new Region();
+//        diagonal.getStyleClass().add("login-diagonal");
+//
+//        diagonal.setPrefWidth(100);
+//        diagonal.prefHeightProperty().bind(tela.heightProperty().multiply(1.3));
+//
+//        diagonal.setRotate(7);
+//        diagonal.setTranslateX(-45);
+//        diagonal.setMouseTransparent(true);
+
         HBox.setHgrow(painelEsquerdo, Priority.ALWAYS);
         HBox.setHgrow(painelDireito, Priority.ALWAYS);
 
@@ -50,6 +59,7 @@ public class LoginView {
         tela.getChildren().addAll(
                 painelEsquerdo, painelDireito
         );
+
 
         root.getChildren().add(tela);
 
@@ -144,6 +154,14 @@ public class LoginView {
         Hyperlink esqueceuSenha =
                 new Hyperlink("Esqueceu sua senha?");
 
+        esqueceuSenha.setOnAction(event -> {
+            RecuperacaoSenhaView recuperacao = new RecuperacaoSenhaView(stage);
+
+            Scene cenaRecuperacao = new Scene(recuperacao.getroot(), 800, 600);
+
+            stage.setScene(cenaRecuperacao);
+        })
+
         esqueceuSenha.getStyleClass().add("login-link");
 
         VBox formulario = new VBox(15);
@@ -162,16 +180,6 @@ public class LoginView {
 
         painelDireito.getChildren().add(formulario);
 
-        Image imagem = new Image(
-                getClass().getResource("/imagens/juris.png").toExternalForm()
-        );
-
-//        ImageView imagemView = new ImageView(imagem);
-//        imagemView.fitWidthProperty().bind(painelEsquerdo.widthProperty());
-//        imagemView.fitHeightProperty().bind(painelEsquerdo.heightProperty());
-//        imagemView.setPreserveRatio(false);
-
-//        painelEsquerdo.getChildren().add(imagemView);
     }
 
     public StackPane getView() {

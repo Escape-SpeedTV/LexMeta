@@ -64,7 +64,7 @@
 }
 
 .login-left{
-    -fx-background-color: #061722;
+    -fx-background-color: #061827;
     -fx-background-image: url("../imagens/juris.png");
     -fx-background-size: cover;
     -fx-background-position: center;
@@ -73,6 +73,7 @@
 
 .login-right{
     -fx-background-color: #f7f8fa;
+    -fx-shape: "M 80 0 L 1000 0 L 1000 1000 L 0 1000 Q 40 500 0 Z";
 }
 
 .login-title{
@@ -91,4 +92,8 @@
     -fx-font-size: 14px;
     -fx-font-weight: bold;
     -fx-text-fill: #101820;
+}
+
+.login-diagonal{
+    -fx-background-color: #ffffff;
 }
