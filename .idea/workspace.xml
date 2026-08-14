@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b93caff0-dc29-4911-8e35-cbe86cea5502" name="Changes" comment="Concluido a parte do back-end responsável pelo login e pelo redirecionamento do usuário. Em relação ao front-end, já foi inciado a estilização em CSS e estou finalizando ainda.">
+    <list default="true" id="b93caff0-dc29-4911-8e35-cbe86cea5502" name="Changes" comment="Ajustado a aba de login, com acrescimo das palavras que faltavam.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br.com.lexjuris/view/LoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br.com.lexjuris/view/LoginView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br.com.lexjuris/view/recuperacaoSenhaView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br.com.lexjuris/view/recuperacaoSenhaView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/CSS/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/CSS/login.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -192,7 +191,8 @@
     <MESSAGE value="Foi adicionado algumas imagens do designer. iniciado o código do menu de login." />
     <MESSAGE value="Colocado o controle de senha e usuario" />
     <MESSAGE value="Concluido a parte do back-end responsável pelo login e pelo redirecionamento do usuário. Em relação ao front-end, já foi inciado a estilização em CSS e estou finalizando ainda." />
-    <option name="LAST_COMMIT_MESSAGE" value="Concluido a parte do back-end responsável pelo login e pelo redirecionamento do usuário. Em relação ao front-end, já foi inciado a estilização em CSS e estou finalizando ainda." />
+    <MESSAGE value="Ajustado a aba de login, com acrescimo das palavras que faltavam." />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajustado a aba de login, com acrescimo das palavras que faltavam." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
