@@ -1,143 +1,117 @@
-.root {
-    -fx-background-color: #f4f5f7;
+.root, .stack-pane {
+    -fx-background-image: url("../imagens/imgFundo.png");
+    -fx-background-size: cover; /* Para a imagem preencher a tela toda */
+    -fx-background-position: center;
 }
 
-.login-scrren{
-    -fx-background-color: #f8f8f8;
-}
-
-.login-form {
-    -fx-alignment: center;
-    -fx-padding: 45px;
-    -fx-pref-width: 540px;
-    -fx-max-width: 480px;
-    -fx-max-height: 550px;
+.login-card{
     -fx-background-color: white;
-    -fx-border-color: #d9dee3;
-    -fx-border-width: 1px;
-    -fx-border-radius: 12px;
-    -fx-background-radius: 12px;
-
+    -fx-background-radius: 20;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.10), 20, 0, 0, 10);
 }
 
 .login-title {
-    -fx-font-size: 32px;
+    -fx-font-size: 24px;
     -fx-font-weight: bold;
-    -fx-padding: 0 0 20px 0;
+    -fx-text-fill: #1a1a1a;
 }
 
-.login-input {
-    -fx-pref-width: 320px;
-    -fx-pref-height: 48px;
-    -fx-background-color: white;
-    -fx-border-color: #d9dcee3;
-    -fx-border-width: 1px;
-    -fx-border-radius: 7px;
-    -fx-background-radius: 6px;
-    -fx-padding: 0 12px;
+.login-subtitle {
     -fx-font-size: 14px;
+    -fx-text-fill: #666666;
 }
+
+
+
+.input-label{
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #101820;
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+.login-checkbox {
+    -fx-font-size: 14px;
+    -fx-text-fill: #667085;
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+.login-checkbox .box {
+    -fx-background-color: white;
+    -fx-border-color: #d9dce3;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+}
+
+.login-checkbox:selected .mark {
+    -fx-background-color: white;
+}
+
+
+
+
+.login-link {
+    -fx-font-size: 14px;
+    -fx-text-fill: #005b63;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-border-color: transparent;
+    -fx-padding: 15;
+    -fx-alignment: RIGHT;
+}
+
+.login-link:hover {
+    -fx-text-fill: #00727a;
+    -fx-underline: true;
+}
+
+
 
 .login-button {
-    -fx-pref-width: 320px;
-    -fx-pref-height: 48px;
-    -fx-background-color: #005b63;
+    -fx-background-color: #004d5a;
     -fx-text-fill: white;
-    -fx-font-size: 15px;
     -fx-font-weight: bold;
-    -fx-background-radius: 7px;
+    -fx-background-radius: 8;
+    -fx-padding: 12px;
     -fx-cursor: hand;
 }
 
 .login-button:hover{
-    -fx-background-color: #00727a;
+    -fx-background-color: #003b45;
 }
 
-.login-checkbox {
+.login-button:pressed {
+    -fx-background-color: #004a52;
+}
+
+
+
+.separator .line {
+    -fx-border-color: #e5e7eb; /* Linha fina para o separador */
+}
+
+.login-footer-text {
     -fx-font-size: 13px;
-}
-
-.login-link {
-    -fx-font-size: 13px;
-    -fx-text-fill: #18202b;
-}
-
-.login-screen{
-    -fx-background-color: #f8f8f8;
-
-}
-
-.login-left{
-    -fx-background-color: #061827;
-    -fx-background-image: url("../imagens/juris.png");
-    -fx-background-size: cover;
-    -fx-background-position: center;
-    -fx-background-repeat: no-repeat;
-    -fx-padding: 50px 40px;
-}
-
-.login-right{
-    -fx-background-color: #f7f8fa;
-    -fx-shape: "M 80 0 L 1000 0 L 1000 1000 L 0 1000 Q 40 500 0 Z";
-}
-
-.login-title{
-    -fx-font-size: 30px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #101820;
-}
-
-.login-subtitle {
-    -fx-font-size: 16px;
     -fx-text-fill: #667085;
-    -fx-translate-y: -35px;
+    -fx-font-family: "Segoe UI", sans-serif;
 }
 
-.input-label{
+.login-input-container {
+    -fx-background-color: white;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-pref-height: 45px;
+}
+
+.login-input-container:focused {
+    -fx-border-color: #005b63;
+    -fx-border-width: 2px;
+}
+
+.login-input-field {
     -fx-font-size: 14px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #101820;
-}
-
-.login-diagonal{
-    -fx-background-color: #ffffff;
-}
-
-.main-title{
-    -fx-font-size: 36px;
-    -fx-font-weight: bold;
-    -fx-text-fill: white;
-    -fx-font-family: "Segoe UI", sans-serif;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 0, 2);
-}
-
-.main-subtitle{
-    -fx-font-size: 16px;
-    -fx-text-fill: #aabbcc;
-    -fx-font-family: "Segoe UI", sans-serif;
-    -fx-wrap-text: true;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 8, 0, 0, 2);
-}
-
-.feature-card {
-    -fx-background-color: rgba(255, 255, 255, 0.1);
-    -fx-background-radius: 10px;
-    -fx-padding: 12 18;
-    -fx-cursor: hand;
-    -fx-backdrop-filter: blur(10px);
-}
-
-.feature-card:hover {
-    -fx-background-color: rgba(255, 255, 255, 0.2);
-}
-
-.feature-icon {
-    -fx-font-size: 18px;
-    -fx-text-fill: #6c9bff;
-}
-
-.feature-text {
-    -fx-font-size: 14px;
-    -fx-text-fill: #ddeeff;
-    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-text-fill: #333333;
+    -fx-prompt-text-fill: #999999;
+    -fx-background-color: transparent;
+    -fx-padding: 0 10 0 0;
 }
