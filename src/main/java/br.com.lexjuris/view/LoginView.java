@@ -9,12 +9,13 @@ import javafx.stage.Stage;
 import br.com.lexjuris.controller.loginController;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.Cursor;
 
 public class LoginView {
 
     private final StackPane root;
     private final TextField email;
-    private final PasswordField senha;
+    private TextField senha;
     private final loginController controller;
 
     public LoginView(Stage stage) {
@@ -79,30 +80,85 @@ public class LoginView {
         // Campo Senha
         Label senhaLabel = new Label("Senha");
         senhaLabel.getStyleClass().add("input-label");
-        senha = new PasswordField();
-        senha.setPromptText("Digite sua senha");
-        senha.getStyleClass().add("login-input-field");
-        senha.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
+
+        TextField senhaVisivel = new TextField();
+        senhaVisivel.setPromptText("Digite sua senha");
+        senhaVisivel.getStyleClass().add("login-input-field");
+        senhaVisivel.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
+
+        PasswordField senhaOculta = new PasswordField();
+        senhaOculta.setPromptText("Digite sua senha");
+        senhaOculta.getStyleClass().add("login-input-field");
+        senhaOculta.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
+
+        senhaOculta.setVisible(true);
+        senhaVisivel.setVisible(false);
+        senha = senhaVisivel;
+
+        StackPane senhaStack = new StackPane();
+        senhaStack.getChildren().addAll(senhaOculta, senhaVisivel);
+
+        senhaVisivel.prefWidthProperty().bind(senhaStack.widthProperty());
+        senhaOculta.prefWidthProperty().bind(senhaStack.widthProperty());
 
         ImageView iconeCadeado = new ImageView(new Image(getClass().getResourceAsStream("/imagens/393a7d8e436bccc3aedfd43865b48890-icone-de-cadeado.webp")));
         iconeCadeado.setFitWidth(20);
         iconeCadeado.setFitHeight(20);
         iconeCadeado.setPreserveRatio(true);
 
+        ImageView iconeOlho = new ImageView(new Image(getClass().getResourceAsStream("/imagens/olho.png")));
+        iconeOlho.setFitWidth(20);
+        iconeOlho.setFitHeight(20);
+        iconeOlho.setPreserveRatio(true);
+        iconeOlho.setOpacity(0.6);
+
+        Region linhaVertical1 = new Region();
+        linhaVertical1.setPrefWidth(1);
+        linhaVertical1.setStyle("-fx-border-color: #e0e0e0; -fx-border-width: 0 1 0 0;");
+
+        Region linhaVertical2 = new Region();
+        linhaVertical2.setPrefWidth(1);
+        linhaVertical2.setStyle("-fx-border-color: #e0e0e0; -fx-border-width: 0 1 0 0;");
+
         HBox senhaInputContainer = new HBox(10);
         senhaInputContainer.setAlignment(Pos.CENTER_LEFT);
         senhaInputContainer.setPadding(new Insets(0, 0, 0, 15));
         senhaInputContainer.getStyleClass().add("login-input-container");
 
-        senhaInputContainer.getChildren().addAll(iconeCadeado, senha);
-        HBox.setHgrow(senha, Priority.ALWAYS);
+        senhaInputContainer.getChildren().addAll(iconeCadeado, linhaVertical, senhaStack, iconeOlho);
+        HBox.setHgrow(senhaStack, Priority.ALWAYS);
+
+        StackPane botaoOlho = new StackPane(iconeOlho);
+        botaoOlho.setPadding(new Insets(10));
+        botaoOlho.setCursor(Cursor.HAND);
+
+        botaoOlho.setOnMouseClicked(event -> {
+
+            boolean estaVisivel = senhaVisivel.isVisible();
+            if (estaVisivel) {
+                senhaOculta.setText(senhaVisivel.getText());
+                senhaVisivel.setVisible(false);
+                senhaOculta.setVisible(true);
+                senha = senhaOculta;
+                iconeOlho.setImage(new Image(getClass().getResourceAsStream("/imagens/olho.png")));
+            } else {
+                senhaVisivel.setText(senhaOculta.getText());
+                senhaOculta.setVisible(false);
+                senhaVisivel.setVisible(true);
+                senha = senhaVisivel;
+                iconeOlho.setImage(new Image(getClass().getResourceAsStream("/imagens/olhoAberto.png")));
+            }
+        });
+
+        senhaInputContainer.getChildren().remove(iconeOlho);
+        senhaInputContainer.getChildren().add(botaoOlho);
 
         VBox senhaBox = new VBox(7, senhaLabel, senhaInputContainer);
 
         // Linha Inferior
         HBox linhaInferior = new HBox();
         linhaInferior.setAlignment(Pos.CENTER_LEFT);
-        linhaInferior.setSpacing(20);
+        linhaInferior.setSpacing(10);
 
         CheckBox lembrar = new CheckBox("Lembrar de mim");
         lembrar.getStyleClass().add("login-checkbox");
@@ -115,7 +171,7 @@ public class LoginView {
         esqueceuSenha.setOnAction(event -> {
             System.out.println("Navegar para recuperação de senha");
         });
-        linhaInferior.getChildren().addAll(lembrar, esqueceuSenha);
+        linhaInferior.getChildren().addAll(lembrar, spacer, esqueceuSenha);
 
         // Botão Entrar
         Button entrar = new Button("ENTRAR");
@@ -168,13 +224,47 @@ public class LoginView {
                 linhaInferior,
                 entrar,
                 new Separator(),
-                rodapeBox
+                rodapeBox,
         );
+
 
         StackPane.setAlignment(cartaoLogin, Pos.CENTER_RIGHT);
         StackPane.setMargin(cartaoLogin, new Insets(0, 120, 0, 0));
 
+        HBox rodapeTela = new HBox();
+        rodapeTela.setAlignment(Pos.CENTER_LEFT);
+        rodapeTela.setPadding(new Insets(10, 0, 0, 0));
+        rodapeTela.setSpacing(15);
+
+        ImageView iconeEscudo = new ImageView(new Image(getClass().getResourceAsStream("/imagens/315.png")));
+        iconeEscudo.setFitWidth(14);
+        iconeEscudo.setFitHeight(14);
+        iconeEscudo.setPreserveRatio(true);
+
+        Label textoSeguro = new Label("Sistema seguro e protegido");
+        textoSeguro.getStyleClass().add("footer-text");
+
+        HBox ladoEsquerdo = new HBox(8);
+        ladoEsquerdo.setAlignment(Pos.CENTER_LEFT);
+        ladoEsquerdo.getChildren().addAll(iconeEscudo, textoSeguro);
+
+        Region espacoMedio = new Region();
+        HBox.setHgrow(espacoMedio, Priority.ALWAYS);
+
+        Label textoDireitos = new Label("©2026 LexMeta. Todos os direitos reservados.");
+        textoDireitos.getStyleClass().add("footer-text");
+
+        rodapeTela.getChildren().addAll(ladoEsquerdo, espacoMedio, textoDireitos);
+
+        StackPane.setAlignment(rodapeTela, Pos.BOTTOM_CENTER);
+        StackPane.setMargin(
+                rodapeTela,
+                new Insets(0, 15, 10, 15)
+        );
+
         root.getChildren().add(cartaoLogin);
+        root.getChildren().add(rodapeTela);
+        StackPane.setAlignment(rodapeTela, Pos.BOTTOM_CENTER);
 
         // Carrega o CSS
         var css = getClass().getResource("/css/login.css");
