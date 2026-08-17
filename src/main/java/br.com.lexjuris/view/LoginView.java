@@ -23,11 +23,18 @@ public class LoginView {
         controller = new loginController();
         root = new StackPane();
 
+        VBox painelEsquerdo = new VBox(20);
+        painelEsquerdo.setAlignment(Pos.CENTER_LEFT);
+        painelEsquerdo.setPadding(new Insets(60, 50, 60, 60));
+
+        VBox painelDireito = new VBox();
+        painelDireito.setAlignment(Pos.CENTER);
+        painelDireito.setPadding(new Insets(40));
+
         // Cartão Branco
         VBox cartaoLogin = new VBox(15);
         cartaoLogin.setAlignment(Pos.CENTER);
         cartaoLogin.setPadding(new Insets(40, 50, 40, 50));
-
         cartaoLogin.setPrefWidth(490);
         cartaoLogin.setMaxWidth(490);
         cartaoLogin.setPrefHeight(640);
@@ -215,6 +222,9 @@ public class LoginView {
         linkAdmin.getStyleClass().add("login-link");
         rodapeBox.getChildren().addAll(rodapeTexto, linkAdmin);
 
+        StackPane.setAlignment(cartaoLogin, Pos.CENTER_RIGHT);
+        StackPane.setMargin(cartaoLogin, new Insets(0, 120, 0, 0));
+
         // Montagem do Formulário
         cartaoLogin.getChildren().addAll(
                 titulo,
@@ -224,47 +234,51 @@ public class LoginView {
                 linhaInferior,
                 entrar,
                 new Separator(),
-                rodapeBox,
+                rodapeBox
         );
 
+        Region espacoTopo = new Region();
+        espacoTopo.setPrefHeight(30);
 
-        StackPane.setAlignment(cartaoLogin, Pos.CENTER_RIGHT);
-        StackPane.setMargin(cartaoLogin, new Insets(0, 120, 0, 0));
+        Region mola = new Region();
+        VBox.setVgrow(mola, Priority.ALWAYS);
+
+        VBox.setMargin(cartaoLogin, new Insets(30, 0, 0, 0));
 
         HBox rodapeTela = new HBox();
         rodapeTela.setAlignment(Pos.CENTER_LEFT);
-        rodapeTela.setPadding(new Insets(10, 0, 0, 0));
-        rodapeTela.setSpacing(15);
+        rodapeTela.setPadding(new Insets(0, 50, 40, 50));
+        rodapeTela.setMaxWidth(Double.MAX_VALUE);
+        rodapeTela.setSpacing(20);
 
         ImageView iconeEscudo = new ImageView(new Image(getClass().getResourceAsStream("/imagens/315.png")));
         iconeEscudo.setFitWidth(14);
         iconeEscudo.setFitHeight(14);
-        iconeEscudo.setPreserveRatio(true);
-
+//
         Label textoSeguro = new Label("Sistema seguro e protegido");
         textoSeguro.getStyleClass().add("footer-text");
 
-        HBox ladoEsquerdo = new HBox(8);
+        HBox ladoEsquerdo = new HBox(10);
         ladoEsquerdo.setAlignment(Pos.CENTER_LEFT);
         ladoEsquerdo.getChildren().addAll(iconeEscudo, textoSeguro);
 
-        Region espacoMedio = new Region();
-        HBox.setHgrow(espacoMedio, Priority.ALWAYS);
 
         Label textoDireitos = new Label("©2026 LexMeta. Todos os direitos reservados.");
         textoDireitos.getStyleClass().add("footer-text");
 
-        rodapeTela.getChildren().addAll(ladoEsquerdo, espacoMedio, textoDireitos);
+        rodapeTela.getChildren().addAll(ladoEsquerdo, iconeEscudo, textoSeguro, textoDireitos);
 
-        StackPane.setAlignment(rodapeTela, Pos.BOTTOM_CENTER);
-        StackPane.setMargin(
-                rodapeTela,
-                new Insets(0, 15, 10, 15)
-        );
+        painelDireito.getChildren().addAll(espacoTopo,cartaoLogin, mola, rodapeTela);
 
-        root.getChildren().add(cartaoLogin);
-        root.getChildren().add(rodapeTela);
-        StackPane.setAlignment(rodapeTela, Pos.BOTTOM_CENTER);
+        HBox telaPrincipal = new HBox();
+        telaPrincipal.getChildren().addAll(painelEsquerdo, painelDireito);
+        HBox.setHgrow(painelEsquerdo, Priority.ALWAYS);
+        HBox.setHgrow(painelDireito, Priority.ALWAYS);
+        painelEsquerdo.setPrefWidth(550);
+
+        root.getChildren().add(telaPrincipal);
+
+//        root.getChildren().add(cartaoLogin);
 
         // Carrega o CSS
         var css = getClass().getResource("/css/login.css");
