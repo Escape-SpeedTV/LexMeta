@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b93caff0-dc29-4911-8e35-cbe86cea5502" name="Changes" comment="Finalizado o painel de login. E iniciado os detalhes finais, para a aba de login.">
+    <list default="true" id="b93caff0-dc29-4911-8e35-cbe86cea5502" name="Changes" comment="Adicionado um painel esquerdo e direito, para adicionar os conteudos de forma correta.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br.com.lexjuris/view/LoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br.com.lexjuris/view/LoginView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/CSS/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/CSS/login.css" afterDir="false" />
@@ -41,12 +41,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="SIGN_OFF_COMMIT" value="true" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;Escape-SpeedTV&quot;
-  }
-}</component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {}
+}]]></component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/Escape-SpeedTV/LexMeta.git&quot;,
@@ -194,7 +191,8 @@
     <MESSAGE value="Ajustado a aba de login, com acrescimo das palavras que faltavam." />
     <MESSAGE value="Finalizado o fundo da tela de login. E já adicionado a aba do login e senha já os icones." />
     <MESSAGE value="Finalizado o painel de login. E iniciado os detalhes finais, para a aba de login." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finalizado o painel de login. E iniciado os detalhes finais, para a aba de login." />
+    <MESSAGE value="Adicionado um painel esquerdo e direito, para adicionar os conteudos de forma correta." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adicionado um painel esquerdo e direito, para adicionar os conteudos de forma correta." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

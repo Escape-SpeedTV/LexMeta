@@ -23,12 +23,13 @@ public class LoginView {
         controller = new loginController();
         root = new StackPane();
 
-        VBox painelEsquerdo = new VBox(20);
-        painelEsquerdo.setAlignment(Pos.CENTER_LEFT);
-        painelEsquerdo.setPadding(new Insets(60, 50, 60, 60));
+        VBox painelEsquerdo = new VBox(25);
+        painelEsquerdo.setAlignment(Pos.TOP_LEFT);
+        painelEsquerdo.setPadding(new Insets(50, 40, 50, 60));
 
         VBox painelDireito = new VBox();
         painelDireito.setAlignment(Pos.CENTER);
+        painelDireito.setFillWidth(true);
         painelDireito.setPadding(new Insets(40));
 
         // Cartão Branco
@@ -247,13 +248,14 @@ public class LoginView {
 
         HBox rodapeTela = new HBox();
         rodapeTela.setAlignment(Pos.CENTER_LEFT);
-        rodapeTela.setPadding(new Insets(0, 50, 40, 50));
+        rodapeTela.setPadding(new Insets(0, 50, 5, 50));
+        VBox.setMargin(rodapeTela, new Insets(35, 0, 0, 0));
         rodapeTela.setMaxWidth(Double.MAX_VALUE);
-        rodapeTela.setSpacing(20);
 
         ImageView iconeEscudo = new ImageView(new Image(getClass().getResourceAsStream("/imagens/315.png")));
         iconeEscudo.setFitWidth(14);
         iconeEscudo.setFitHeight(14);
+        iconeEscudo.setPreserveRatio(true);
 //
         Label textoSeguro = new Label("Sistema seguro e protegido");
         textoSeguro.getStyleClass().add("footer-text");
@@ -262,11 +264,14 @@ public class LoginView {
         ladoEsquerdo.setAlignment(Pos.CENTER_LEFT);
         ladoEsquerdo.getChildren().addAll(iconeEscudo, textoSeguro);
 
+        Region espacoMedio = new Region();
+        HBox.setHgrow(espacoMedio, Priority.ALWAYS);
+
 
         Label textoDireitos = new Label("©2026 LexMeta. Todos os direitos reservados.");
         textoDireitos.getStyleClass().add("footer-text");
 
-        rodapeTela.getChildren().addAll(ladoEsquerdo, iconeEscudo, textoSeguro, textoDireitos);
+        rodapeTela.getChildren().addAll(ladoEsquerdo, espacoMedio, textoDireitos);
 
         painelDireito.getChildren().addAll(espacoTopo,cartaoLogin, mola, rodapeTela);
 
@@ -277,8 +282,6 @@ public class LoginView {
         painelEsquerdo.setPrefWidth(550);
 
         root.getChildren().add(telaPrincipal);
-
-//        root.getChildren().add(cartaoLogin);
 
         // Carrega o CSS
         var css = getClass().getResource("/css/login.css");

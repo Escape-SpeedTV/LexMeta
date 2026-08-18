@@ -4,7 +4,10 @@
     -fx-background-position: center;
 }
 
-.login-card{
+/* =========================================
+   CARTÃO BRANCO E TÍTULOS
+   ========================================= */
+.login-card {
     -fx-background-color: white;
     -fx-background-radius: 20;
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.10), 20, 0, 0, 10);
@@ -21,9 +24,10 @@
     -fx-text-fill: #666666;
 }
 
-
-
-.input-label{
+/* =========================================
+   LABELS DOS INPUTS E CHECKBOX
+   ========================================= */
+.input-label {
     -fx-font-size: 14px;
     -fx-font-weight: 600;
     -fx-text-fill: #101820;
@@ -47,16 +51,15 @@
     -fx-background-color: white;
 }
 
-
-
-
+/* =========================================
+   HYPERLINKS (Esqueceu sua senha?)
+   ========================================= */
 .login-link {
     -fx-font-size: 14px;
     -fx-text-fill: #005b63;
     -fx-font-family: "Segoe UI", sans-serif;
     -fx-border-color: transparent;
-    -fx-padding: 15;
-    -fx-alignment: RIGHT;
+    -fx-padding: 0; /* Removi o padding de 15px para alinhar corretamente */
 }
 
 .login-link:hover {
@@ -64,8 +67,9 @@
     -fx-underline: true;
 }
 
-
-
+/* =========================================
+   BOTÃO ENTRAR
+   ========================================= */
 .login-button {
     -fx-background-color: #004d5a;
     -fx-text-fill: white;
@@ -75,7 +79,7 @@
     -fx-cursor: hand;
 }
 
-.login-button:hover{
+.login-button:hover {
     -fx-background-color: #003b45;
 }
 
@@ -83,18 +87,9 @@
     -fx-background-color: #004a52;
 }
 
-
-
-.separator .line {
-    -fx-border-color: #e5e7eb; /* Linha fina para o separador */
-}
-
-.login-footer-text {
-    -fx-font-size: 13px;
-    -fx-text-fill: #667085;
-    -fx-font-family: "Segoe UI", sans-serif;
-}
-
+/* =========================================
+   CAMPOS DE INPUT (E-mail e Senha)
+   ========================================= */
 .login-input-container {
     -fx-background-color: white;
     -fx-border-color: #e0e0e0;
@@ -116,8 +111,21 @@
     -fx-padding: 0 10 0 0;
 }
 
+/* =========================================
+   SEPARADOR E RODAPÉS
+   ========================================= */
+.separator .line {
+    -fx-border-color: #e5e7eb;
+}
+
+.login-footer-text {
+    -fx-font-size: 13px;
+    -fx-text-fill: #667085;
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
 .footer-text {
-    -fx-font-size: 12px;
+    -fx-font-size: 14px;
     -fx-text-fill: #667085;
     -fx-font-family: "Segoe UI", sans-serif;
 }
